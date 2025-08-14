@@ -1,5 +1,4 @@
 import { Instrument } from '../types';
-import './InstrumentCard.css';
 
 interface InstrumentCardProps {
   instrument: Instrument;
@@ -13,8 +12,8 @@ export const InstrumentCard = ({ instrument }: InstrumentCardProps) => {
     }).format(price);
   };
 
-  const getStatusColor = (ativo: boolean) => {
-    return ativo ? '#4CAF50' : '#F44336';
+  const getStatusClass = (ativo: boolean) => {
+    return ativo ? 'active' : 'inactive';
   };
 
   const getStatusText = (ativo: boolean) => {
@@ -22,7 +21,7 @@ export const InstrumentCard = ({ instrument }: InstrumentCardProps) => {
   };
 
   return (
-    <div className="instrument-card">
+    <div className="instrument-card card-enter">
       <h3 className="card-title">{instrument.nome}</h3>
       
       <div className="card-content">
@@ -58,10 +57,7 @@ export const InstrumentCard = ({ instrument }: InstrumentCardProps) => {
         
         <div className="card-info">
           <span className="label">Status:</span>
-          <span 
-            className="value status" 
-            style={{ color: getStatusColor(instrument.ativo) }}
-          >
+          <span className={`value status ${getStatusClass(instrument.ativo)}`}>
             {getStatusText(instrument.ativo)}
           </span>
         </div>

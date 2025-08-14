@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { CardsList } from './pages/CardsList';
 import { TableList } from './pages/TableList';
-import './App.css';
 
 function App() {
   return (

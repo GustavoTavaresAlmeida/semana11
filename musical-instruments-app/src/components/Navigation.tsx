@@ -4,7 +4,7 @@ export const Navigation = () => {
   const location = useLocation();
 
   return (
-    <nav className="navigation">
+    <nav className="navigation slide-in-down">
       <Link 
         to="/cards" 
         className={`nav-button ${location.pathname === '/cards' ? 'active' : ''}`}
